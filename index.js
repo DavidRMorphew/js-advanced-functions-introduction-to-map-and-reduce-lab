@@ -21,3 +21,28 @@ const mapToSquare = (sourceArray) => {
     sourceArray.forEach((element) => {newArray.push(element ** 2)})
     return newArray
 };
+
+const reduceToTotal = (sourceArray, startingPoint = 0) => {
+    sourceArray.forEach((element) => (startingPoint += element))
+    return startingPoint
+};
+
+const reduceToAllTrue = (sourceArray) => {
+    let allTrueEvaluator = true
+    sourceArray.forEach(element => {
+        if (!!element === false) {
+            allTrueEvaluator = false
+        }
+    })
+    return allTrueEvaluator    
+};
+
+const reduceToAnyTrue = (sourceArray) => {
+    let allTrueEvaluator = false
+    sourceArray.forEach(element => {
+        if (!!element === true) {
+            allTrueEvaluator = true
+        }
+    })
+    return allTrueEvaluator    
+};
